@@ -1,0 +1,22 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id("org.jetbrains.kotlin.plugin.noarg") version '1.4.10'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("org.http4k:http4k-bom:4.1.1.1")
+    implementation "org.http4k:http4k-core"
+    implementation "org.http4k:http4k-server-netty"
+    implementation "org.http4k:http4k-client-apache"
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.2.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.+"
+}
