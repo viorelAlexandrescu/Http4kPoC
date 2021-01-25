@@ -25,7 +25,7 @@ class PersonController(private val personRepository: PersonRepository) {
         return Response(OK).body(mapper.writeValueAsString(newPerson))
     }
 
-    private fun getAllPersons(request: Request): Response {
+    private fun getAllPersons(@Suppress("UNUSED_PARAMETER") request: Request): Response {
         val persons = personRepository.findAll()
         return Response(OK).body(mapper.writeValueAsString(persons))
     }
